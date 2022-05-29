@@ -1,7 +1,8 @@
+import Todos from "./components/todos";
 
 function App() {
   return (
-    <div className="text-5xl">به نام خدا</div>
+    <Todos />
   );
 }
 
