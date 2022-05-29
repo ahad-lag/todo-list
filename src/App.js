@@ -1,7 +1,7 @@
 
 function App() {
   return (
-    null
+    <div className="text-5xl">به نام خدا</div>
   );
 }
 
