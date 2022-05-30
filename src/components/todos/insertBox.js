@@ -1,6 +1,11 @@
 import React , { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from './../../store/slices/todoSlice';
 
 export default function InsertBox() {
+
+    // create dispatch
+    const dispatch = useDispatch();
 
     // insert state
     const [ todo , setTodo ] = useState({
@@ -16,17 +21,25 @@ export default function InsertBox() {
         })
     }
 
-
+    const addTodoHandler = (e) => {
+        e.preventDefault();
+        dispatch(addTodo(todo));
+        setTodo({
+            todo : '',
+            status : false
+        });
+    }
 
     return(
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
             <div className="w-full bg-white py-4 px-3 shadow sm:rounded-lg sm:px-6 text-center">
-                <form>
+                <form onSubmit={addTodoHandler}>
                     <div className="flex items-center">
                         <input
                             type="text"
                             name="todo"
                             onChange={chengeInputHandler}
+                            value={todo.todo}
                             className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         />
                         <button
