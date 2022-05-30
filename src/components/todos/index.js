@@ -1,3 +1,5 @@
+import Header from "./header"
+import InsertBox from "./insertBox"
 
 const people = [
     {
@@ -17,29 +19,12 @@ export default function Todos() {
 
     return(
         <div className="min-h-full flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8">
-            <div className="sm:mx-auto sm:w-full sm:max-w-xl">
-                <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">لیست کارها</h2>
-            </div>
+            
+            {/* import header */}
+            <Header />
 
-            <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
-                <div className="w-full bg-white py-4 px-3 shadow sm:rounded-lg sm:px-6 text-center">
-                    <form>
-                        <div className="flex items-center">
-                            <input
-                                type="text"
-                                name="todo"
-                                className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                            />
-                            <button
-                                type="submit"
-                                className="inline-flex items-center justify-center rounded-md border border-transparent bg-green-600 hover:bg-green-700 px-4 py-2 text-sm font-medium text-white shadow-sm sm:w-auto mr-3"
-                            >
-                                درج
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            {/* import header */}
+            <InsertBox />
 
             <div className="mt-3 sm:mx-auto sm:w-full sm:max-w-xl">
                 <div className="w-full bg-white py-4 px-3 shadow sm:rounded-lg sm:px-6 text-center">

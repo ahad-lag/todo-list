@@ -6,8 +6,8 @@ const todoSlice = createSlice({
         value : []
     },
     reducers : {
-        addTodo : () => {
-            return null
+        addTodo : (state , actions) => {
+            state.value.push(actions.payload.todo)
         }
     }
 });
