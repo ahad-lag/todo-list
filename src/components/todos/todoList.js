@@ -1,6 +1,12 @@
+import { useSelector } from 'react-redux';
 import TodoListItem from './todoListItem';
+import EmptyListItem from './emptyListItem';
 
 export default function TodoList() {
+
+    // create selector
+    const todos = useSelector(state => state.todo.value);
+
     return(
         <div className="px-4 sm:px-6 lg:px-8">
             <div className="mt-4 flex flex-col">
@@ -22,15 +28,16 @@ export default function TodoList() {
                                         <th scope="col" className="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">
                                         تنظیمات
                                         </th>
-                                        <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                                        <span className="sr-only">Edit</span>
-                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-200 bg-white">
 
                                     {/* import todo list item (tr) */}
-                                    <TodoListItem />
+                                    {
+                                        todos.length
+                                            ? <TodoListItem />
+                                            : <EmptyListItem />
+                                    }
 
                                 </tbody>
                             </table>
