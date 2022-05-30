@@ -1,5 +1,23 @@
+import React , { useState } from "react";
 
 export default function InsertBox() {
+
+    // insert state
+    const [ todo , setTodo ] = useState({
+        todo : '',
+        status : false
+    })
+
+    // insert handlers
+    const chengeInputHandler = (e) => {
+        setTodo({
+            ...todo,
+            [e.target.name] : e.target.value
+        })
+    }
+
+
+
     return(
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
             <div className="w-full bg-white py-4 px-3 shadow sm:rounded-lg sm:px-6 text-center">
@@ -8,6 +26,7 @@ export default function InsertBox() {
                         <input
                             type="text"
                             name="todo"
+                            onChange={chengeInputHandler}
                             className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         />
                         <button
