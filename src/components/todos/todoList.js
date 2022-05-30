@@ -35,7 +35,7 @@ export default function TodoList() {
                                     {/* import todo list item (tr) */}
                                     {
                                         todos.length
-                                            ? <TodoListItem />
+                                            ? todos.map(( todo , index ) => <TodoListItem index={index + 1} todo={todo.todo} status={todo.status} />)
                                             : <EmptyListItem />
                                     }
 

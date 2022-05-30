@@ -1,17 +1,21 @@
+import StatusBadgeDone from './statusBadgeDone';
+import StatusBadgeUndone from './statusBadgeUndone';
 
-export default function TodoListItem() {
+export default function TodoListItem({ index , todo , status }) {
     return(
         <tr key="key">
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">
-                <div className="text-gray-900 mr-1">'person.row'</div>
+                <div className="text-gray-900 mr-1">{index}</div>
             </td>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">
-                <div className="text-gray-900">'person.title'</div>
+                <div className="text-gray-900">{todo}</div>
             </td>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">
-                <span className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
-                'person.todoStatus'
-                </span>
+                {
+                    status
+                        ? <StatusBadgeDone />
+                        : <StatusBadgeUndone />
+                }
             </td>
             <td className="relative whitespace-nowrap py-4 px-3 text-center text-sm font-medium">
                 <button
