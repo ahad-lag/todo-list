@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import TodoListItem from './todoListItem';
-import EmptyListItem from './emptyListItem';
+import TodoListItem from './todoListItem/todoListItem';
+import EmptyListItem from './todoListItem/emptyListItem';
 
 export default function TodoList() {
 

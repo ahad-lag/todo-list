@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deleteTodo , toggleTodo } from '../../../store/slices/todoSlice';
+import { deleteTodo , toggleTodo } from '../../../../store/slices/todoSlice';
 import StatusBadgeDone from './statusBadgeDone';
 import StatusBadgeUndone from './statusBadgeUndone';
 
