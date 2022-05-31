@@ -11,6 +11,9 @@ const todoSlice = createSlice({
         },
         deleteTodo : (state , { payload }) => {
             state.todoList = state.todoList.filter(item => item.id !== payload);
+        },
+        toggleTodo : (state , actions) {
+            console.log('toggle');
         }
     }
 });
