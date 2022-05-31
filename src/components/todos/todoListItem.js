@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deleteTodo } from './../../store/slices/todoSlice';
+import { deleteTodo , toggleTodo } from './../../store/slices/todoSlice';
 import StatusBadgeDone from './statusBadgeDone';
 import StatusBadgeUndone from './statusBadgeUndone';
 
@@ -9,6 +9,10 @@ export default function TodoListItem({ index , todo }) {
 
     const deleteTodoHandler = () => {
         dispatch(deleteTodo(todo.id));
+    }
+
+    const toggleTodoHandler = () => {
+        dispatch(toggleTodo(todo.id));
     }
 
     return(
@@ -29,6 +33,7 @@ export default function TodoListItem({ index , todo }) {
             <td className="relative whitespace-nowrap py-4 px-3 text-center text-sm font-medium">
                 <button
                     type="button"
+                    onClick={toggleTodoHandler}
                     className="inline-flex items-center p-1 border border-transparent rounded-full shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 ml-2"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
