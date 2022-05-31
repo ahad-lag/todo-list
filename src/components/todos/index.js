@@ -1,6 +1,6 @@
-import Header from "./header"
-import InsertTodo from "./insertTodo"
-import TodoListBox from "./todoListBox"
+import Header from "./layout/header"
+import InsertTodo from "./InsertTodo/insertTodo"
+import TodoListBox from "./todoList/todoListBox"
 
 export default function Todos() {
 
