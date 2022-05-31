@@ -1,5 +1,5 @@
 import Header from "./header"
-import InsertBox from "./insertBox"
+import InsertTodo from "./insertTodo"
 import TodoListBox from "./todoListBox"
 
 export default function Todos() {
@@ -11,7 +11,7 @@ export default function Todos() {
             <Header />
 
             {/* import header */}
-            <InsertBox />
+            <InsertTodo />
 
             {/* import Todo list box */}
             <TodoListBox />

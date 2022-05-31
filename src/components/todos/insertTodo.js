@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addTodo } from './../../store/slices/todoSlice';
 import Form from './form'
 
-export default function InsertBox() {
+export default function InsertTodo() {
 
     // create dispatch
     const dispatch = useDispatch();
