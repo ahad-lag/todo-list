@@ -5,7 +5,7 @@ import EmptyListItem from './emptyListItem';
 export default function TodoList() {
 
     // create selector
-    const todos = useSelector(state => state.todo.value);
+    const todos = useSelector(state => state.todo.todoList);
 
     return(
         <div className="px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@ export default function TodoList() {
                                     {/* import todo list item (tr) */}
                                     {
                                         todos.length
-                                            ? todos.map(( todo , index ) => <TodoListItem index={index + 1} todo={todo.todo} status={todo.status} />)
+                                            ? todos.map(( todo , index ) => <TodoListItem index={index + 1} todo={todo} />)
                                             : <EmptyListItem />
                                     }
 

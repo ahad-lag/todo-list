@@ -1,23 +1,27 @@
+import { useDispatch } from 'react-redux';
+import { deleteTodo } from './../../store/slices/todoSlice';
 import StatusBadgeDone from './statusBadgeDone';
 import StatusBadgeUndone from './statusBadgeUndone';
 
-export default function TodoListItem({ index , todo , status }) {
+export default function TodoListItem({ index , todo }) {
+
+    const dispatch = useDispatch();
 
     const deleteTodoHandler = () => {
-        console.log(todo.todo);
+        dispatch(deleteTodo(todo.id));
     }
 
     return(
-        <tr key="key">
+        <tr key={todo.id}>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">
                 <div className="text-gray-900 mr-1">{index}</div>
             </td>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">
-                <div className="text-gray-900">{todo}</div>
+                <div className="text-gray-900">{todo.todo}</div>
             </td>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">
                 {
-                    status
+                    todo.status
                         ? <StatusBadgeDone />
                         : <StatusBadgeUndone />
                 }
