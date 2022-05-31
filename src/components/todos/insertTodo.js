@@ -10,6 +10,7 @@ export default function InsertTodo() {
 
     // insert state
     const [ todo , setTodo ] = useState({
+        id : Date.now(),
         todo : '',
         status : false
     })
@@ -26,6 +27,7 @@ export default function InsertTodo() {
         e.preventDefault();
         dispatch(addTodo(todo));
         setTodo({
+            id : Date.now(),
             todo : '',
             status : false
         });
