@@ -6,7 +6,7 @@ import EditItem from './editItem';
 
 export default function TodoListItem({ index , todo }) {
 
-    const [ editMode , setEditMode ] = useState();
+    const [ editMode , setEditMode ] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -27,6 +27,6 @@ export default function TodoListItem({ index , todo }) {
                 todo={todo}
                 setEditMode={setEditMode}
             />
-            : <EditItem />
+            : <EditItem todo={todo} />
     )
 }

@@ -30,7 +30,7 @@ export default function Item({ deleteTodoHandler , toggleTodoHandler , todo , in
                 }
                 
                 {/* import edit button */}
-                <EditButton deleteTodoHandler={deleteTodoHandler} />
+                <EditButton setEditMode={setEditMode} />
 
                 {/* import delete button */}
                 <DeleteButton deleteTodoHandler={deleteTodoHandler} />
