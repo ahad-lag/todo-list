@@ -1,7 +1,12 @@
 import CheckStatusButton from './button/checkStatusButton';
 import UnCheckStatusButton from './button/unCheckStatusButton';
 
-export default function EditItem({ todo }) {
+export default function EditItem({ todo , setEditMode }) {
+
+    const cancelEditModeHandler = () => {
+        setEditMode(false)
+    }
+
     return(
         <tr>
             <td colSpan="4" className='py-5'>
@@ -16,10 +21,10 @@ export default function EditItem({ todo }) {
                     </div>
                     <div className='basis-1/6 text-center'>
                         {/* import edit button */}
-                        <UnCheckStatusButton />
+                        <UnCheckStatusButton UnCheckButtonHandler={cancelEditModeHandler} />
 
                         {/* import edit button */}
-                        <CheckStatusButton />
+                        <CheckStatusButton CheckButtonHandler={cancelEditModeHandler} />
                     </div>
                 </form>
             </td>

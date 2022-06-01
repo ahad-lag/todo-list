@@ -25,8 +25,8 @@ export default function Item({ deleteTodoHandler , toggleTodoHandler , todo , in
                 {/* import check status buttons */}
                 {
                     todo.status
-                        ? <UnCheckStatusButton toggleTodoHandler={toggleTodoHandler} />
-                        : <CheckStatusButton toggleTodoHandler={toggleTodoHandler} />
+                        ? <UnCheckStatusButton UnCheckButtonHandler={toggleTodoHandler} />
+                        : <CheckStatusButton CheckButtonHandler={toggleTodoHandler} />
                 }
                 
                 {/* import edit button */}

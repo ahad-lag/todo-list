@@ -27,6 +27,9 @@ export default function TodoListItem({ index , todo }) {
                 todo={todo}
                 setEditMode={setEditMode}
             />
-            : <EditItem todo={todo} />
+            : <EditItem 
+                todo={todo} 
+                setEditMode={setEditMode}
+            />
     )
 }
