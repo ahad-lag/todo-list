@@ -8,11 +8,17 @@ const todoSlice = createSlice({
     },
     reducers : {
         // for filtering result show in list
-        chengeFilter : (state ,{ payload }) => state.filterTodoFlag = payload,
+        chengeFilter : (state ,{ payload }) => {
+            state.filterTodoFlag = payload
+        },
         // for add todo
-        addTodo : (state , actions) => state.todoList.push(actions.payload),
+        addTodo : (state , actions) => {
+            state.todoList.push(actions.payload)
+        },
         // for delete todo
-        deleteTodo : (state , { payload }) => state.todoList = state.todoList.filter(item => item.id !== payload),
+        deleteTodo : (state , { payload }) => {
+            state.todoList = state.todoList.filter(item => item.id !== payload)
+        },
         // for edit todo
         editTodo : (state , { payload }) => {
             state.todoList.forEach(item => {
