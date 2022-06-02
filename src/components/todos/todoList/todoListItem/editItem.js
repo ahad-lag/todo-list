@@ -1,10 +1,28 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { editTodo } from '../../../../store/slices/todoSlice';
 import CheckStatusButton from './button/checkStatusButton';
 import UnCheckStatusButton from './button/unCheckStatusButton';
 
 export default function EditItem({ todo , setEditMode }) {
 
-    const cancelEditModeHandler = () => {
-        setEditMode(false)
+    const dispatch = useDispatch();
+
+    const [ editText , setEditText ] = useState(todo);
+
+    // create handlers
+    const editTodoHandler = () => {
+        dispatch(editTodo(editText));
+        setEditMode(false);
+    }
+
+    const cancelEditModeHandler = () => setEditMode(false)
+
+    const chengeEditTodoText = (e) => {
+        setEditText({
+            ...editText,
+            [e.target.name] : e.target.value
+        });
     }
 
     return(
@@ -14,8 +32,9 @@ export default function EditItem({ todo , setEditMode }) {
                     <div className='basis-5/6'>
                         <input
                             type="text"
-                            name="editTodo"
-                            value={todo.todo}
+                            name="todo"
+                            value={editText.todo}
+                            onChange={chengeEditTodoText}
                             className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         />
                     </div>
@@ -24,7 +43,7 @@ export default function EditItem({ todo , setEditMode }) {
                         <UnCheckStatusButton UnCheckButtonHandler={cancelEditModeHandler} />
 
                         {/* import edit button */}
-                        <CheckStatusButton CheckButtonHandler={cancelEditModeHandler} />
+                        <CheckStatusButton CheckButtonHandler={editTodoHandler} />
                     </div>
                 </form>
             </td>
