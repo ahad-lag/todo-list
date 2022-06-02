@@ -4,7 +4,7 @@ const todoSlice = createSlice({
     name : 'todo',
     initialState : {
         todoList : [],
-        filterTodoFlag : 'undo'
+        filterTodoFlag : 'all'
     },
     reducers : {
         addTodo : (state , actions) => {
@@ -26,6 +26,9 @@ const todoSlice = createSlice({
                     item.status = ! item.status
                 }
             });
+        },
+        chengeFilter : (state ,{ payload }) => {
+            state.filterTodoFlag = payload
         }
     }
 });
