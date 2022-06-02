@@ -17,7 +17,7 @@ export default function TodoListItem({ index , todo }) {
     const toggleTodoHandler = () => {
         dispatch(toggleTodo(todo.id));
     }
-
+    console.log('filterTodoFlag');
     return(
         ! editMode
             ? <Item 

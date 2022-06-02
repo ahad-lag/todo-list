@@ -6,6 +6,7 @@ export default function TodoList() {
 
     // create selector
     const todos = useSelector(state => state.todo.todoList);
+    const filterTodoFlag = useSelector(state => state.todo.filterTodoFlag);
 
     return(
         <div className="px-4 sm:px-6 lg:px-8">
@@ -32,10 +33,23 @@ export default function TodoList() {
                                 </thead>
                                 <tbody className="divide-y divide-gray-200 bg-white">
 
-                                    {/* import todo list item (tr) */}
                                     {
+                                        /* import todo list item (tr) */
                                         todos.length
-                                            ? todos.map(( todo , index ) => <TodoListItem index={index + 1} todo={todo} />)
+                                            ? todos.map(( todo , index ) => {
+                                                switch (filterTodoFlag) {
+                                                    case 'all':
+                                                            return <TodoListItem index={index + 1} todo={todo} />
+                                                    case 'do':
+                                                        if( todo.status ){
+                                                            return <TodoListItem index={index + 1} todo={todo} /> 
+                                                        }
+                                                    case 'undo':
+                                                        if( ! todo.status ){
+                                                            return <TodoListItem index={index + 1} todo={todo} /> 
+                                                        }
+                                                }
+                                            })
                                             : <EmptyListItem />
                                     }
 
