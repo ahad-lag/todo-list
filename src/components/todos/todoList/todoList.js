@@ -40,14 +40,20 @@ export default function TodoList() {
                                                 switch (filterTodoFlag) {
                                                     case 'all':
                                                             return <TodoListItem index={index + 1} todo={todo} />
+                                                        break;
                                                     case 'do':
-                                                        if( todo.status ){
+                                                        if( todo.status === true ){
                                                             return <TodoListItem index={index + 1} todo={todo} /> 
                                                         }
+                                                        break;
                                                     case 'undo':
-                                                        if( ! todo.status ){
+                                                        if( todo.status === false ){
                                                             return <TodoListItem index={index + 1} todo={todo} /> 
                                                         }
+                                                        break;
+                                                    default:
+                                                        return <TodoListItem index={index + 1} todo={todo} />
+                                                    break;
                                                 }
                                             })
                                             : <EmptyListItem />
