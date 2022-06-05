@@ -4,11 +4,14 @@ import { deleteTodo , toggleTodo } from '../../../../store/slices/todoSlice';
 import Item from './item';
 import EditItem from './editItem';
 import DeleteModal from "../../../modal/deleteModal";
+import ValidateModal from "../../../modal/validateModal";
 
 export default function TodoListItem({ index , todo }) {
 
     const [ editMode , setEditMode ] = useState(false);
     const [ showModal , setShowModal ] = useState(false);
+    const [ showValidateModal , setShowValidateModal ] = useState(false);
+
 
     const dispatch = useDispatch();
 
@@ -35,6 +38,7 @@ export default function TodoListItem({ index , todo }) {
                 : <EditItem
                     todo={todo}
                     setEditMode={setEditMode}
+                    setShowValidateModal={setShowValidateModal}
                 />
             }
 
@@ -43,6 +47,10 @@ export default function TodoListItem({ index , todo }) {
                 showModal={showModal}
                 setShowModal={setShowModal}
                 deleteTodoHandler={deleteTodoHandler}
+            />
+            <ValidateModal
+                showModal={showValidateModal}
+                setShowModal={setShowValidateModal}
             />
 
         </>

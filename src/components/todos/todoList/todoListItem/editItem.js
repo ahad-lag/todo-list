@@ -4,16 +4,21 @@ import { editTodo } from '../../../../store/slices/todoSlice';
 import CheckStatusButton from './button/checkStatusButton';
 import UnCheckStatusButton from './button/unCheckStatusButton';
 
-export default function EditItem({ todo , setEditMode }) {
+export default function EditItem({ todo , setEditMode , setShowValidateModal }) {
 
     const dispatch = useDispatch();
 
     const [ editText , setEditText ] = useState(todo);
 
     // create handlers
-    const editTodoHandler = () => {
-        dispatch(editTodo(editText));
-        setEditMode(false);
+    const editTodoHandler = (e) => {
+        e.preventDefault();
+        if(editText.todo){
+            dispatch(editTodo(editText));
+            setEditMode(false);
+        }else{
+            setShowValidateModal(true)
+        }
     }
 
     const cancelEditModeHandler = () => setEditMode(false)
@@ -28,7 +33,7 @@ export default function EditItem({ todo , setEditMode }) {
     return(
         <tr>
             <td colSpan="4" className='py-5'>
-                <form className="flex flex-row mx-auto sm:pr-7 sm:pr-2">
+                <form className="flex flex-row mx-auto sm:pr-7 sm:pr-2" onSubmit={editTodoHandler}>
                     <div className='basis-5/6'>
                         <input
                             type="text"
