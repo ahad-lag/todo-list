@@ -9,7 +9,7 @@ export default function TodoListBox () {
                 {/* import list */}
                 <FilterTodos />
 
-                {/* import todoList */}
+                {/* import todo List */}
                 <TodoList />
                 
             </div>
