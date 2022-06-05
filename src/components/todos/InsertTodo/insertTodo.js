@@ -2,6 +2,7 @@ import React , { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from '../../../store/slices/todoSlice';
 import Form from './form'
+import ValidateModal from "../../modal/validateModal";
 
 export default function InsertTodo() {
 
@@ -9,6 +10,7 @@ export default function InsertTodo() {
     const dispatch = useDispatch();
 
     // insert state
+    const [ showModal , setShowModal ] = useState(false);
     const [ todo , setTodo ] = useState({
         id : Date.now(),
         todo : '',
@@ -25,16 +27,24 @@ export default function InsertTodo() {
 
     const addTodoHandler = (e) => {
         e.preventDefault();
-        dispatch(addTodo(todo));
-        setTodo({
-            id : Date.now(),
-            todo : '',
-            status : false
-        });
+        if(todo.todo){
+            dispatch(addTodo(todo));
+            setTodo({
+                id : Date.now(),
+                todo : '',
+                status : false
+            });
+        }else{
+            setShowModal(true);
+        }
     }
 
     return(
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-2xl">
+            <ValidateModal
+                showModal={showModal}
+                setShowModal={setShowModal}
+            />
             <div className="w-full bg-white py-4 px-3 shadow sm:rounded-lg sm:px-4 text-center">
                 <Form
                     chengeInputHandler={chengeInputHandler}
