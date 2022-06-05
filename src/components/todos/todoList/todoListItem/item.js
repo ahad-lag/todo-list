@@ -5,7 +5,7 @@ import EditButton from './button/editButton';
 import CheckStatusButton from './button/checkStatusButton';
 import UnCheckStatusButton from './button/unCheckStatusButton';
 
-export default function Item({ deleteTodoHandler , toggleTodoHandler , todo , index , setEditMode }) {
+export default function Item({ toggleTodoHandler , todo , index , setEditMode , setShowModal }) {
     return(
         <tr key={todo.id}>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">
@@ -33,7 +33,7 @@ export default function Item({ deleteTodoHandler , toggleTodoHandler , todo , in
                 <EditButton setEditMode={setEditMode} />
 
                 {/* import delete button */}
-                <DeleteButton deleteTodoHandler={deleteTodoHandler} />
+                <DeleteButton setShowModal={setShowModal} />
             </td>
         </tr>
     )

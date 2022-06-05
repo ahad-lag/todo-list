@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eba1551c-f1c3-498e-803c-f0822ef14c1f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/todo-list.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/modal/deleteModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/todos/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todos/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/todos/todoList/todoListItem/button/deleteButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todos/todoList/todoListItem/button/deleteButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/todos/todoList/todoListItem/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todos/todoList/todoListItem/item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/todos/todoList/todoListItem/todoListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todos/todoList/todoListItem/todoListItem.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1653989463783</updated>
       <workItem from="1653989465996" duration="86000" />
-      <workItem from="1654421601873" duration="1490000" />
+      <workItem from="1654421601873" duration="6070000" />
     </task>
     <servers />
   </component>
