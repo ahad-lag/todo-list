@@ -1,6 +1,8 @@
 import Header from "./layout/header"
 import InsertTodo from "./InsertTodo/insertTodo"
 import TodoListBox from "./todoList/todoListBox"
+import { ToastContainer } from "react-toastify" ;
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Todos() {
 
@@ -15,6 +17,9 @@ export default function Todos() {
 
             {/* import Todo list box */}
             <TodoListBox />
+
+            {/* import ToastContainer */}
+            <ToastContainer />
 
         </div>
     )
