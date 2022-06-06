@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editTodo } from '../../../../store/slices/todoSlice';
+import { AlertToast } from '../../../toast/toastMain';
 import CheckStatusButton from './button/checkStatusButton';
 import UnCheckStatusButton from './button/unCheckStatusButton';
 
@@ -15,6 +16,7 @@ export default function EditItem({ todo , setEditMode , setShowValidateModal }) 
         e.preventDefault();
         if(editText.todo){
             dispatch(editTodo(editText));
+            AlertToast('با موفقیت ویرایش شد');
             setEditMode(false);
         }else{
             setShowValidateModal(true)

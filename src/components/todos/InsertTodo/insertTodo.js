@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addTodo } from '../../../store/slices/todoSlice';
 import Form from './form'
 import ValidateModal from "../../modal/validateModal";
+import { AlertToast } from "../../toast/toastMain";
 
 export default function InsertTodo() {
 
@@ -29,6 +30,7 @@ export default function InsertTodo() {
         e.preventDefault();
         if(todo.todo){
             dispatch(addTodo(todo));
+            AlertToast('با موفقیت اضافه شد')
             setTodo({
                 id : Date.now(),
                 todo : '',

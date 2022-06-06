@@ -5,6 +5,7 @@ import Item from './item';
 import EditItem from './editItem';
 import DeleteModal from "../../../modal/deleteModal";
 import ValidateModal from "../../../modal/validateModal";
+import { AlertToast } from '../../../toast/toastMain';
 
 export default function TodoListItem({ index , todo }) {
 
@@ -17,11 +18,13 @@ export default function TodoListItem({ index , todo }) {
 
     const deleteTodoHandler = () => {
         dispatch(deleteTodo(todo.id));
+        AlertToast('با موفقیت حذف شد')
         setShowModal(false)
     }
 
     const toggleTodoHandler = () => {
         dispatch(toggleTodo(todo.id));
+        AlertToast('وضعیت با موفقیت تغییر کرد')
     }
     
     return(
